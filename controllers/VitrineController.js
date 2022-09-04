@@ -28,7 +28,7 @@ export default class VitrineController
             const item = new Item( produto, marca, categoria, valor, cor, voltagem, tamanho)
             item.save()
             resposta.status(200).json({
-                mensagem: 'Item cadastrado com sucesso!',
+                mensagem: 'Produto cadastrado com sucesso!',
                 dados: item.dadosPublicos()
             })
         } else {
@@ -43,7 +43,7 @@ export default class VitrineController
     static index( pedido, resposta )
     {
         resposta.status(200).json({
-            mensagem: 'Tentamos retornar todos os usuários!',
+            mensagem: 'Tentamos retornar todos os produtos!',
             dados: Item.all.map( itm => itm.dadosPublicos() )
         })
     }
